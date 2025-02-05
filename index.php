@@ -9,6 +9,7 @@ require_once("./controlers/signUpControler.php");
 require_once("./controlers/signInControler.php");
 require_once("./controlers/bloquedUserControler.php");
 require_once("./controlers/addSongControler.php");
+require_once("./controlers/addSongFormSubmitControler.php");
 
 
 if(isset($_GET["action"])){
@@ -69,7 +70,7 @@ if(isset($_GET["action"])){
         displayAddSongForm();
 
     }else if($_GET["action"] == "addSongFormSubmit"){
-        require_once("./controlers/addSongFormSubmitControler.php");
+        ajouterChanson($_POST["songName"], $_POST["category"], $_SESSION["userId"]);
     }
 
 }else{

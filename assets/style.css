@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.horizontalMenu ul {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.horizontalMenu{
+    width: 500px;
+    margin: 10px auto 10px auto;
+    font-weight: bolder;
+    font-size: 11px;
+}
+
+.verticalMenu{
+    background-color: bisque;
+    width: 250px;
+    position: absolute;
+    left: -250px;
+}
+
+
+.verticalMenu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.verticalMenu li{
+    padding: 10px;
+    border-top: solid 1px black;
+    width: 100%;
+}
+
+#fermerVerticalMenu{
+    text-align: right;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+
+}
+
+#humburgerMenu{
+    position: absolute;
+    width: 40px;
+    top: 0px;
+    cursor: pointer;
+    display: none;
+
+}
+
+.signUpForm, .signInForm, .addSongForm{
+    width: 300px;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 200px auto 0 auto;
+}
+
+.signUpForm input, .signInForm input, .addSongForm input{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.signUpForm select{
+    margin-bottom: 10px;
+}
+
+
+
+@media (max-width: 534px){
+
+    #humburgerMenu{
+        display: block;
+    }
+
+    .horizontalMenu{
+        display: none;
+    }
+}
+
+@media (min-width: 535px){
+    #humburgerMenu{
+        display: none !important;
+    }
+}

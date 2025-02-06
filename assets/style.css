@@ -65,7 +65,7 @@ a{
 
 }
 
-.signUpForm, .signInForm, .addSongForm{
+.signUpForm, .signInForm, .addSongForm, .addPlaylistForm{
     width: 300px;
     border: 1px solid black;
     padding: 20px;
@@ -80,6 +80,16 @@ a{
 
 .signUpForm select{
     margin-bottom: 10px;
+}
+
+.songContainer{
+    height: 80px;
+    border: 1px solid black;
+    overflow: scroll;
+}
+
+#playlistName{
+    width: 100%;
 }
 
 

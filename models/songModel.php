@@ -22,4 +22,12 @@ class Song{
         $stmt->bindParam(":idUser", $idUser);
         $stmt->execute();
     }
+
+    //la méthode qui permet de retourner toutes les chansons
+    public function getAllSongs(){
+        $stmt = $this->connection->prepare("SELECT * FROM chansons;");
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

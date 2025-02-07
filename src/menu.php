@@ -10,7 +10,7 @@
             <?php if(isset($_SESSION["username"])){ ?>
                 <li><a href="./index.php?action=addPlaylistForm">Ajouter playlist</a></li>
             <?php } ?>
-                <li><a href="#">Playlists</a></li>
+                <li><a href="./index.php?action=displayAllPlaylists">Playlists</a></li>
             <?php if(isset($_SESSION["username"])){ ?>
                 <li><a href="#">Paramétres</a></li>
             <?php } ?>
@@ -33,9 +33,9 @@
                 <li><a href="./index.php?action=addSongForm">Ajouter chanson</a></li>
             <?php } ?>
             <?php if(isset($_SESSION["username"])){ ?>
-                <li><a href="#">Ajouter playlist</a></li>
+                <li><a href="./index.php?action=addPlaylistForm">Ajouter playlist</a></li>
             <?php } ?>
-                <li><a href="#">Playlists</a></li>
+                <li><a href="./index.php?action=displayAllPlaylistsgit add">Playlists</a></li>
             <?php if(isset($_SESSION["username"])){ ?>
                 <li><a href="#">Paramétres</a></li>
             <?php } ?>

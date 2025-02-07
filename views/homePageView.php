@@ -12,7 +12,19 @@
     <?php require_once("./src/menu.php"); ?>
 
 
-    
+    <main class="containerSongCards">
+        
+    <?php foreach($songs as $song){ ?>
+        <div class="songCard">
+            <div class="songImage">
+                <img src="./assets/images/music-thumbnail.jpg" alt="">
+            </div>
+            <h3 class="songTitle"><a href="./index.php?action=displaySong&id=<?php echo $song["id"]; ?>"><?php echo $song["name"]; ?></a></h3>
+        </div>
+    <?php } ?>
+
+
+    </main>
 
 
     <script src="./assets/js/menuScript.js"></script>

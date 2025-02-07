@@ -11,6 +11,8 @@ require_once("./controlers/bloquedUserControler.php");
 require_once("./controlers/addSongControler.php");
 require_once("./controlers/addSongFormSubmitControler.php");
 require_once("./controlers/addPlaylistControler.php");
+require_once("./controlers/addPlaylistFormSubmitControler.php");
+require_once("./controlers/playlistControler.php");
 
 
 if(isset($_GET["action"])){
@@ -75,7 +77,20 @@ if(isset($_GET["action"])){
         ajouterChanson($_POST["songName"], $_POST["category"], $_SESSION["userId"]);
     
     }else if($_GET["action"] == "addPlaylistForm"){
+
         displayAddPlaylistForm();
+    }else if($_GET["action"] == "addPlaylistFormSubmit"){
+
+        $idPlaylist = createPlaylist($_POST["playlistName"], $_SESSION["userId"]);
+        $arraykey = array_keys($_POST);
+        for($i = 1; $i < count($arraykey); $i++){
+            
+            addSongToPlaylist($arraykey[$i], $idPlaylist);
+        }
+        header("Location: ./index.php");
+        
+    }else if($_GET["action"] == "displayAllPlaylists"){
+        displayAllPlaylists();
     }
 
 }else{

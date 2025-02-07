@@ -92,6 +92,31 @@ a{
     width: 100%;
 }
 
+.songCard, .playlistCard{
+    width: 300px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.songImage img, .playlistImage img{
+    width: 300px;
+}
+
+.songImage, .playlistImage{
+    display: flex;
+    justify-content: center;
+    
+}
+
+main.containerSongCards, main.containerPlaylistCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 25px;
+    margin-top: 100px;
+}
 
 
 @media (max-width: 534px){

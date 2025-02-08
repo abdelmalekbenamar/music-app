@@ -30,4 +30,13 @@ class Song{
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    //la méthode qui permet de retourner une chanson
+    public function getSong($id){
+        $stmt = $this->connection->prepare("SELECT * FROM chansons WHERE id = :id;");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

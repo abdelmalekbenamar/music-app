@@ -39,4 +39,13 @@ class Playlist{
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    //la méthode qui permet de retourner les chansons d'une playlist
+    public function getSongsOfPlaylist($id){
+        $stmt = $this->connection->prepare("select playlists.name as playlistName, chansons.name as songName, chansons.file as file from playlists  inner join chansonsplaylists on  playlists.id = chansonsplaylists.idPlaylist inner join chansons on  chansonsplaylists.idChanson = chansons.id where playlists.id = :id;");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

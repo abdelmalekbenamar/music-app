@@ -13,6 +13,8 @@ require_once("./controlers/addSongFormSubmitControler.php");
 require_once("./controlers/addPlaylistControler.php");
 require_once("./controlers/addPlaylistFormSubmitControler.php");
 require_once("./controlers/playlistControler.php");
+require_once("./controlers/songControler.php");
+require_once("./controlers/PlaylistSongsControler.php");
 
 
 if(isset($_GET["action"])){
@@ -91,6 +93,10 @@ if(isset($_GET["action"])){
         
     }else if($_GET["action"] == "displayAllPlaylists"){
         displayAllPlaylists();
+    }else if($_GET["action"] == "displaySong"){
+        showSong($_GET["id"]);
+    }else if($_GET["action"] == "displayPlaylist"){
+        getSongsOfPlaylist($_GET["id"]);
     }
 
 }else{

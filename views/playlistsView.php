@@ -25,33 +25,8 @@
     
     <?php } ?>
 
-        <div class="songCard">
-            <div class="songImage">
-                <img src="./assets/images/music-thumbnail.jpg" alt="">
-            </div>
-            <h3 class="songTitle">Title de chanson</h3>
-        </div>
 
-        <div class="songCard">
-            <div class="songImage">
-                <img src="./assets/images/music-thumbnail.jpg" alt="">
-            </div>
-            <h3 class="songTitle">Title de chanson</h3>
-        </div>
 
-        <div class="songCard">
-            <div class="songImage">
-                <img src="./assets/images/music-thumbnail.jpg" alt="">
-            </div>
-            <h3 class="songTitle">Title de chanson</h3>
-        </div>
-
-        <div class="songCard">
-            <div class="songImage">
-                <img src="./assets/images/music-thumbnail.jpg" alt="">
-            </div>
-            <h3 class="songTitle">Title de chanson</h3>
-        </div>
 
     </main>
 

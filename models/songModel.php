@@ -39,4 +39,32 @@ class Song{
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    //la méthode qui permet de retourner toutes les chansons d'un utilisateur donnée
+    public function getArtisteSongs($id){
+        $stmt = $this->connection->prepare("SELECT * FROM chansons WHERE idUser = :id;");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    //la méthode qui permet de supprimer une chanson d'un utilisateur
+    public function deleteSong($id){
+        $stmt = $this->connection->prepare("DELETE FROM chansons WHERE id = :id;");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+    }
+
+    //la méthode qui permet de modifier le titre et la catégorie d'une chanson
+    public function updateSong($id, $name, $category){
+        $stmt = $this->connection->prepare("UPDATE chansons SET name = :name, idCategory = :category WHERE id = :id;");
+        $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":category", $category);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+
+    }
+
+
 }

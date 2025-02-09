@@ -12,7 +12,7 @@
             <?php } ?>
                 <li><a href="./index.php?action=displayAllPlaylists">Playlists</a></li>
             <?php if(isset($_SESSION["username"])){ ?>
-                <li><a href="#">Paramétres</a></li>
+                <li><a href="./index.php?action=parametresMenu">Paramétres</a></li>
             <?php } ?>
             <?php if(!isset($_SESSION["userId"])){ ?>
                 <li><a href="./index.php?action=signUpForm">S'inscrire</a></li>
@@ -37,7 +37,7 @@
             <?php } ?>
                 <li><a href="./index.php?action=displayAllPlaylistsgit add">Playlists</a></li>
             <?php if(isset($_SESSION["username"])){ ?>
-                <li><a href="#">Paramétres</a></li>
+                <li><a href="./index.php?action=parametresMenu">Paramétres</a></li>
             <?php } ?>
             <?php if(!isset($_SESSION["userId"])){ ?>
                 <li><a href="./index.php?action=signUpForm">S'inscrire</a></li>

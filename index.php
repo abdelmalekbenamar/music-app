@@ -15,6 +15,12 @@ require_once("./controlers/addPlaylistFormSubmitControler.php");
 require_once("./controlers/playlistControler.php");
 require_once("./controlers/songControler.php");
 require_once("./controlers/PlaylistSongsControler.php");
+require_once("./controlers/parametresControler.php");
+require_once("./controlers/parametresMusicControler.php");
+require_once("./controlers/deleteSongControler.php");
+require_once("./controlers/editSongControler.php");
+require_once("./controlers/editSongFormSubmitControler.php");
+
 
 
 if(isset($_GET["action"])){
@@ -97,6 +103,22 @@ if(isset($_GET["action"])){
         showSong($_GET["id"]);
     }else if($_GET["action"] == "displayPlaylist"){
         getSongsOfPlaylist($_GET["id"]);
+    }else if($_GET["action"] == "parametresMenu"){
+        displayParametresPage();
+    }else if($_GET["action"] == "parametresMusic"){
+        if($_SESSION["userRule"] == 2) {
+
+            displaySongsForParametresPageArtiste($_SESSION["userId"]);
+        }else if($_SESSION["userRule"] == 1){
+            displaySongsForParametresPageAdmin();
+        }
+
+    }else if($_GET["action"] == "deleteSong"){
+        deleteSong($_GET["id"]);
+    }else if($_GET["action"] == "editSong"){
+        showEditSongForm();
+    }else if($_GET["action"] == "editSongFormSubmit"){
+        editSongFormSubmit($_GET["id"], $_POST["songName"], $_POST["category"]);
     }
 
 }else{
